@@ -1,0 +1,12 @@
+,implementation date,policy,level
+0,05/17/2020,"Lockdown measures extended to May 31, 2020",critical
+1,05/30/2020,"Lockdown measures in containment zones extended to Jun 30, 2020 and phased reopening outside the zones",good
+2,06/29/2020,"Lockdown measures in containment zones extended to Jul 31, 2020 and reopening of more activities outside the zones under unlock 2",good
+3,07/29/2020,"Lockdown measures in containment zones extended to Aug 31, 2020 and reopening of more activities outside the zones under unlock 3",good
+4,08/29/2020,"Lockdown measures in containment zones extended to Sep 30, 2020 and reopening of more activities outside the zones under unlock 4",good
+5,09/30/2020,"Lockdown measures in containment zones extended to Oct 31, 2020 and areas outside the zones remain under unlock 4",good
+6,10/27/2020,"Extended previous orders from Oct 31, 2020 to Nov 30, 2020",medium
+7,11/25/2020,"Implemented guidlines for surveilance, containment, and caution until Dec 31, 2020",good
+8,12/28/2020,"Extended previous orders from Dec 31, 2020 to Jan 31, 2020",good
+9,1/27/2020,"Implemented guidlines for surveilance, containment, and caution until Feb 28, 2020",good
+10,2/26/2020,"Extended previous orders from Feb 28, 2020 to Mar 31, 2020",good

@@ -20,7 +20,7 @@ india_deaths = pd.read_csv("india_deaths_diff.csv")
 states_g = pd.read_csv("plot_states_g.csv")
 states_d = pd.read_csv("plot_states_d.csv")
 date_range = ["2020-01-30", "2021-05-11"]
-
+policy = pd.read.csv("policy_info.csv")
 state_dic = {'ap': 'Andhra Pradesh',
              'dl': 'Delhi',
              'mp': 'Madhya Pradesh',
@@ -99,7 +99,7 @@ def plot_cases(state, ca):
 
     fig = go.Figure()
     fig.add_trace(go.Bar(x=st['date'], y=st['cases'], name="Actual G"))
-    fig.update_traces(marker_color='rgb(0,128,0)',
+    fig.update_traces(marker_color='rgb(0,0,128)',
                       opacity=1)
     # fig.add_trace(go.Scatter(x=sim_data['date'],y = sim_data['G'],name="G"))
     # fig.add_trace(go.Scatter(x=sim_data1['date'],y = sim_data1['A'],name="A"))
@@ -226,6 +226,14 @@ def plot_total_cases(ca):
     # fig.add_trace(go.Scatter(x=ind['date'],y=ind['sum'],mode= 'markers'))
     # fig = px.bar(ind, x='date', y='sum')
     fig.add_trace(go.Bar(x=ind['date'], y=ind['sum'], name='Actual G'))
+    fig = go.Figure()
+    fig.add_trace(go.Bar(x=policy['implementation date'], y=400000, dash='dash'))
+    if policy['level'] == "critical":
+        fig.update_traces(marker_color='rgb(128,0,0)', opacity=1)
+    if policy['level'] == "good":
+        fig.update_traces(marker_color='rgb(0,128,0)', opacity=1)
+    if policy['level'] == "medium":
+        fig.update_traces(marker_color='rgb(255, 255, 0)', opacity=1)
     fig.update_layout(
         autosize=True,
         title="Cases in India",
