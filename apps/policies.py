@@ -227,7 +227,7 @@ def plot_total_cases(ca):
     # fig = px.bar(ind, x='date', y='sum')
     fig.add_trace(go.Bar(x=ind['date'], y=ind['sum'], name='Actual G'))
     #fig = go.Figure()
-    fig.add_trace(go.Bar(x=policy['implementation date'], y=400000, dash='dash',name='policy'))
+    fig.add_trace(go.Bar(x=policy['implementation date'], y=ind['sum']+20, dash='dash',name='policy'))
     if policy['level'] == "critical":
         fig.update_traces(marker_color='rgb(128,0,0)', opacity=1)
     if policy['level'] == "good":
