@@ -236,7 +236,7 @@ def plot_total_cases(ca):
         color='green'
     if policy['level'] == "medium":
         color='yellow'
-    fig.add_vline(x= pd.to_datetime(policy['implementation date']), line_width=3, line_dash='dash', line_color=color)
+    fig.add_vline(x= pd.to_datetime('2021-03-20'), line_width=3, line_dash='dash', line_color=color)
     fig.update_layout(
         autosize=True,
         title="Cases in India",
