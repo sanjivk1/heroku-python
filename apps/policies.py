@@ -227,16 +227,16 @@ def plot_total_cases(ca):
     # fig = px.bar(ind, x='date', y='sum')
     fig.add_trace(go.Bar(x=ind['date'], y=ind['sum'], name='Actual G'))
 
-    fig = go.Figure()
+    #fig = go.Figure()
     color= 'red'
-
+    
     if policy['level'] == "critical":
         color= 'red'
     if policy['level'] == "good":
         color='green'
     if policy['level'] == "medium":
         color='yellow'
-    fig.add_vline(x=policy['implementation date'], line_width=1, line_dash='dash', line_color=color)
+    fig.add_vline(x= pd.to_datetime(policy['implementation date']), line_width=3, line_dash='dash', line_color=color)
     fig.update_layout(
         autosize=True,
         title="Cases in India",
