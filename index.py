@@ -97,6 +97,8 @@ def display_page(pathname):
         return home.layout
     elif pathname == '/lockdown':
         return lockdown.layout
+    elif pathname == '/policies':
+        return policies.layout
     else:
         return simulations.layout
 
