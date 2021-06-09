@@ -236,10 +236,10 @@ def plot_total_cases(ca):
 #         color='green'
 #     if policy['level'] == "medium":
 #         color='yellow'
-    #fig.add_vline(x= pd.to_datetime('2021-03-20'), line_width=3, line_dash='dash', line_color=color)
-    fig.add_shape(type="line",
-    x= pd.to_datetime('2021-03-20'),
-    line=dict(color="RoyalBlue",width=3)
+    fig.add_vline(x= pd.to_datetime('2021-03-20'), line_width=3, line_dash='dash', line_color=color)
+#     fig.add_shape(type="line",
+#     x= pd.to_datetime('2021-03-20'),
+#     line=dict(color="RoyalBlue",width=3)
     fig.update_layout(
         autosize=True,
         title="Cases in India",
@@ -265,9 +265,7 @@ def plot_total_cases(ca):
             type="date",
         ),
     )
-    fig.add_shape(type="line",
-    x= pd.to_datetime('2021-03-20'),
-    line=dict(color="RoyalBlue",width=3))
+
     fig.update_layout(showlegend=False)
     fig.update_yaxes(title=None)
     fig.update_xaxes(title=None)
