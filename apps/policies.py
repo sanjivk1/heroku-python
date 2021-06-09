@@ -230,12 +230,12 @@ def plot_total_cases(ca):
     #fig = go.Figure()
     color= 'red'
     
-    if policy['level'] == "critical":
-        color= 'red'
-    if policy['level'] == "good":
-        color='green'
-    if policy['level'] == "medium":
-        color='yellow'
+    #if policy['level'] == "critical":
+    #    color= 'red'
+#     if policy['level'] == "good":
+#         color='green'
+#     if policy['level'] == "medium":
+#         color='yellow'
     #fig.add_vline(x= pd.to_datetime('2021-03-20'), line_width=3, line_dash='dash', line_color=color)
     fig.add_shape(type="line",
     x= pd.to_datetime('2021-03-20'),
