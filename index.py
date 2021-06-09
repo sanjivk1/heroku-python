@@ -23,7 +23,7 @@ dropdown = dbc.DropdownMenu(
         dbc.DropdownMenuItem("Home", href="/home"),
         dbc.DropdownMenuItem("Projections", href="/Projections"),
         dbc.DropdownMenuItem("Lockdown Release Projections", href="/lockdown"),
-        dbc.DropdownMenuItem("Policies", href="/Policies"),
+        dbc.DropdownMenuItem("Policies", href="/policies"),
     ],
     nav = True,
     in_navbar = True,
