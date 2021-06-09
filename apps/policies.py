@@ -226,14 +226,16 @@ def plot_total_cases(ca):
     # fig.add_trace(go.Scatter(x=ind['date'],y=ind['sum'],mode= 'markers'))
     # fig = px.bar(ind, x='date', y='sum')
     fig.add_trace(go.Bar(x=ind['date'], y=ind['sum'], name='Actual G'))
-    #fig = go.Figure()
-    fig.add_trace(go.Bar(x=policy['implementation date'], y=ind['sum']+20, dash='dash',name='policy'))
+
+    fig = go.Figure()
+
     if policy['level'] == "critical":
-        fig.update_traces(marker_color='rgb(128,0,0)', opacity=1)
+        color= 'red'
     if policy['level'] == "good":
-        fig.update_traces(marker_color='rgb(0,128,0)', opacity=1)
+        color='green'
     if policy['level'] == "medium":
-        fig.update_traces(marker_color='rgb(255, 255, 0)', opacity=1)
+        color='yellow'
+    fig.add_vline(x=policy['implementation date'], line_width=1, line_dash='dash', line_color=color)
     fig.update_layout(
         autosize=True,
         title="Cases in India",
