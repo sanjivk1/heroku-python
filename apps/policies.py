@@ -226,7 +226,9 @@ def plot_total_cases(ca):
     # fig.add_trace(go.Scatter(x=ind['date'],y=ind['sum'],mode= 'markers'))
     # fig = px.bar(ind, x='date', y='sum')
     fig.add_trace(go.Bar(x=ind['date'], y=ind['sum'], name='Actual G'))
+
     fig = go.Figure()
+
     if policy['level'] == "critical":
         color= 'red'
     if policy['level'] == "good":
