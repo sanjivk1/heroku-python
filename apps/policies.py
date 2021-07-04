@@ -1,17 +1,11 @@
-import os
 import dash
-from datetime import datetime
-import json
 import dash_core_components as dcc
 import dash_html_components as html
 from dash.dependencies import Input, Output
 import dash_bootstrap_components as dbc
 import dash_daq as daq
-import plotly.express as px
 import pandas as pd
 import plotly.graph_objects as go
-from dateutil.parser import parse
-
 from app import app
 
 cases = pd.read_csv("indian_cases_confirmed_cases.csv")
