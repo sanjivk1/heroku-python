@@ -1,4 +1,6 @@
+
 # import os
+
 import dash
 import dash_core_components as dcc
 import dash_html_components as html
@@ -9,6 +11,7 @@ import dash_daq as daq
 import pandas as pd
 import plotly.graph_objects as go
 # from dateutil.parser import parse
+
 
 from app import app
 
@@ -315,59 +318,59 @@ def plot_total_cases(ca):
     #     json.dumps(clickData, indent=2)
 
 
-def plot_total_deaths(ca):
-     if ca == False:
-         st = deaths.set_index('state')
-         col1 = st['2020-01-30']
-         st = st.diff(axis=1)
-         st['2020-01-30'] = col1
-         st = st.reset_index()
-     else:
-         st = deaths
-     ind = st.sum(axis=0)[1:]
-     ind = ind.to_frame()
-     ind = ind.reset_index()
-     ind.columns = ['date', 'sum']
-     ind['date'] = pd.to_datetime(ind['date'])
-     # ind = ind[ind['date'] > '2021-01-31']
-     # tc = india_deaths[india_deaths['date'] > '2021-01-31']
-     fig = go.Figure()
-     # fig.add_trace(go.Scatter(x=ind['date'],y=ind['sum'],mode= 'markers'))
-     fig.add_trace(go.Bar(x=ind['date'], y=ind['sum'], name='Actual D'))
-     # fig.add_trace(go.Scatter(x=cum_pro['date'],y=cum_pro['deaths'],name='D'))
-     fig.update_layout(
-         autosize=True,
-         title="Deaths in India",
-         margin=dict(l=40, r=40, t=40, b=40),
-         width=500,
-         height=400,
+# def plot_total_deaths(ca):
+#      if ca == False:
+#          st = deaths.set_index('state')
+#          col1 = st['2020-01-30']
+#          st = st.diff(axis=1)
+#          st['2020-01-30'] = col1
+#          st = st.reset_index()
+#      else:
+#          st = deaths
+#      ind = st.sum(axis=0)[1:]
+#      ind = ind.to_frame()
+#      ind = ind.reset_index()
+#      ind.columns = ['date', 'sum']
+#      ind['date'] = pd.to_datetime(ind['date'])
+#      # ind = ind[ind['date'] > '2021-01-31']
+#      # tc = india_deaths[india_deaths['date'] > '2021-01-31']
+#      fig = go.Figure()
+#      # fig.add_trace(go.Scatter(x=ind['date'],y=ind['sum'],mode= 'markers'))
+#      fig.add_trace(go.Bar(x=ind['date'], y=ind['sum'], name='Actual D'))
+#      # fig.add_trace(go.Scatter(x=cum_pro['date'],y=cum_pro['deaths'],name='D'))
+#      fig.update_layout(
+#          autosize=True,
+#          title="Deaths in India",
+#          margin=dict(l=40, r=40, t=40, b=40),
+#          width=500,
+#          height=400,
 
-         # style = {'color':'green'},
-         yaxis=dict(
-             # range = [0,100] ,
-             # rangemode="tozero",
-             autorange=True,
-             title_text='deaths',
-             titlefont=dict(size=10),
-         ),
-         xaxis=dict(
-             title_text="date",
-             autorange=True,
-             range=date_range,
-             rangeslider=dict(
-                 autorange=True,
-                 range=date_range,
+#          # style = {'color':'green'},
+#          yaxis=dict(
+#              # range = [0,100] ,
+#              # rangemode="tozero",
+#              autorange=True,
+#              title_text='deaths',
+#              titlefont=dict(size=10),
+#          ),
+#          xaxis=dict(
+#              title_text="date",
+#              autorange=True,
+#              range=date_range,
+#              rangeslider=dict(
+#                  autorange=True,
+#                  range=date_range,
 
-             ),
-             type="date",
-         ),
-     )
-     fig.update_layout(showlegend=False)
-     fig.update_yaxes(title=None)
-     fig.update_xaxes(title=None)
-     # fig.update_yaxes(visible=True, showticklabels=True, title=False)
-     # fig.update_xaxes(visible=False, showticklabels=True)
-     return fig
+#              ),
+#              type="date",
+#          ),
+#      )
+#      fig.update_layout(showlegend=False)
+#      fig.update_yaxes(title=None)
+#      fig.update_xaxes(title=None)
+#      # fig.update_yaxes(visible=True, showticklabels=True, title=False)
+#      # fig.update_xaxes(visible=False, showticklabels=True)
+#      return fig
 
 
 #imp_text = ' '
