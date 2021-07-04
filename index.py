@@ -15,7 +15,9 @@ from app import server
 from app import app
 # import all pages in the app
 
+
 from apps import simulations, lockdown, policies
+
 
 
 # building the navigation bar
