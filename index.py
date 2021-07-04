@@ -14,7 +14,7 @@ import dash_bootstrap_components as dbc
 from app import server
 from app import app
 # import all pages in the app
-from apps import home, simulations, lockdown
+from apps import simulations, lockdown
 
 # building the navigation bar
 # https://github.com/facultyai/dash-bootstrap-components/blob/master/examples/advanced-component-usage/Navbars.py
@@ -94,7 +94,7 @@ app.layout = html.Div([
               [Input('url', 'pathname')])
 def display_page(pathname):
     if pathname == '/home':
-        return home.layout
+        return simulations.layout
     elif pathname == '/lockdown':
         return lockdown.layout
     else:
