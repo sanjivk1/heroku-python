@@ -229,6 +229,7 @@ def plot_total_cases(ca):
     # fig = px.bar(ind, x='date', y='sum')
     fig.add_trace(go.Bar(x=ind['date'], y=ind['sum'], name='Actual G', showlegend=False))
 
+
     # fig = go.Figure()
 
     # if policy['level'] == "critical":
@@ -276,6 +277,7 @@ def plot_total_cases(ca):
     #         html.Pre(id='click-data')
     #     ], className='three columns')
     # ])
+
     fig.update_layout(
         autosize=True,
         title="Cases in India",
@@ -301,6 +303,7 @@ def plot_total_cases(ca):
             type="date",
         ),
     )
+
     fig.update_layout(showlegend=False)
     fig.update_yaxes(title=None)
     fig.update_xaxes(title=None)
