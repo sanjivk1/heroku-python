@@ -14,13 +14,13 @@ import dash_bootstrap_components as dbc
 from app import server
 from app import app
 # import all pages in the app
-from apps import simulations, lockdown
+from apps import simulations, lockdown, policies
 
 # building the navigation bar
 # https://github.com/facultyai/dash-bootstrap-components/blob/master/examples/advanced-component-usage/Navbars.py
 dropdown = dbc.DropdownMenu(
     children=[
-        dbc.DropdownMenuItem("Home", href="/home"),
+        dbc.DropdownMenuItem("Policies", href="/policies"),
         dbc.DropdownMenuItem("Projections", href="/Projections"),
         dbc.DropdownMenuItem("Lockdown Release Projections", href="/lockdown"),
     ],
@@ -97,6 +97,8 @@ def display_page(pathname):
         return simulations.layout
     elif pathname == '/lockdown':
         return lockdown.layout
+    elif pathname == '/policies':
+        return policies.layout
     else:
         return simulations.layout
 
